@@ -17,7 +17,6 @@
     .overlay-title { position: absolute; top: 10px; left: 10px; padding: 6px 10px; border-radius: 10px; background: rgba(0,0,0,.55); color: #fff; font-weight: 700; letter-spacing: .2px; }
     .controls { display: flex; justify-content: space-between; align-items: center; padding: 12px; }
     .next { padding: 10px 14px; border-radius: 10px; border: 1px solid #111; background: #111; color: #fff; font-weight: 700; }
-    .credit { margin-top: 10px; font-size: .9rem; color: #444; }
     .chip { padding: 2px 8px; border-radius: 999px; background: #eef2ff; border: 1px solid #c7d2fe; font-size: .8rem; }
   </style>
 </head>
@@ -34,16 +33,14 @@
   <h1>Image Viewer</h1>
   <div class="gallery" aria-live="polite">
     <div class="frame">
-      <img id="photo" src="pic1.jpg" alt="Image 1" />
-      <div id="title" class="overlay-title">Title 1</div>
+      <img id="photo" src="img1.jpg" alt="Image 1" />
+      <div id="title" class="overlay-title">Image 1</div>
     </div>
     <div class="controls">
       <span class="chip" id="counter">1 / 5</span>
       <button class="next" id="nextBtn" type="button">next</button>
     </div>
   </div>
-
-  <p class="credit">Place this file at: <code>~/public_html/cw5/dom.html</code> on codd and replace <code>pic1.jpg</code>…<code>pic5.jpg</code> with your five images in the same folder.</p>
 
   <script>
     // ===== Background color buttons =====
@@ -57,13 +54,13 @@
     });
 
     // ===== Image carousel =====
-    // Replace these filenames & titles with your real images
+    // Example images from Unsplash (replace or download to an /images folder)
     const images = [
-      { src: 'pic1.jpg', title: 'Title 1' },
-      { src: 'pic2.jpg', title: 'Title 2' },
-      { src: 'pic3.jpg', title: 'Title 3' },
-      { src: 'pic4.jpg', title: 'Title 4' },
-      { src: 'pic5.jpg', title: 'Title 5' }
+      { src: 'https://source.unsplash.com/800x500/?nature,water', title: 'Nature Water' },
+      { src: 'https://source.unsplash.com/800x500/?city,night', title: 'City Night' },
+      { src: 'https://source.unsplash.com/800x500/?mountain', title: 'Mountain View' },
+      { src: 'https://source.unsplash.com/800x500/?forest', title: 'Forest Path' },
+      { src: 'https://source.unsplash.com/800x500/?technology', title: 'Technology' }
     ];
 
     let idx = 0;
@@ -85,8 +82,9 @@
       render(idx);
     });
 
-    // initial render (in case you changed array before DOM)
+    // initial render
     render(idx);
   </script>
 </body>
 </html>
+
